@@ -42,3 +42,36 @@ cells and their outputs at each stage of the Python analysis.
 
 All screenshots follow this naming format to keep the folder 
 organised and easy to navigate:
+
+Phase Tool Description png
+
+
+Examples:
+
+| Screenshot Name | What It Shows |
+|-----------------|---------------|
+| `p1_sheets_raw_data_import.png` | Phase 1 — Raw data imported into Google Sheets |
+| `p1_sheets_data_issues_log.png` | Phase 1 — Data Issues Log tab completed |
+| `p3_mysql_kpi_query_revenue.png` | Phase 3 — KPI query showing total revenue result |
+| `p1_python_missing_value_check.png` | Phase 1 — Missing value check output in notebook |
+
+---
+
+## Phase Coverage
+
+| Phase | Screenshots Expected |
+|-------|---------------------|
+| Phase 1 | Google Sheets cleaning steps, Python notebook outputs |
+| Phase 2 | Google Sheets pivot tables and charts, Python EDA outputs |
+| Phase 3 | MySQL Workbench query results |
+| Phase 4 | Python CRM and segmentation outputs |
+
+---
+
+## Important Note
+
+Screenshots are added to their respective subfolders 
+progressively as each phase of the project is completed. 
+Each screenshot is taken immediately after the corresponding 
+step is finished to ensure the visual record accurately 
+reflects the work done at that point in the project.
