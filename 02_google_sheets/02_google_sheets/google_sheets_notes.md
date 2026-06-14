@@ -58,3 +58,6 @@ project is completed.
 *Further entries will be added here as Phase 1 progresses.*
 
 *Further entries will be added here as Phase 1 progresses. Each step taken in the workbook will be recorded above this line in chronological order.*
+
+
+| June 2026 | Step 6 — Check 2 | Duplicate Records Check | Validation and Formulas | Used SUMPRODUCT and COUNTIF to check for duplicate Order IDs, count unique Order IDs, and confirm total row count using COUNTA. Corrected Column G row references and expected value comparisons after identifying a row reference mismatch. | Duplicate records silently inflate revenue figures and distort customer counts. A clean primary key confirms every transaction is recorded exactly once. | Zero duplicate Order IDs found. 5,000 unique Order IDs confirmed. Total row count matches expected 5,000. All three checks returned Pass. |
