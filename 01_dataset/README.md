@@ -48,3 +48,33 @@ This folder contains the original raw dataset used in the E-Commerce Sales Intel
 ## Important Note
 
 This file is preserved in its original state throughout the entire project. All data cleaning, validation, and transformation work is documented and conducted separately inside the Google Sheets workbook and Python scripts. Reference the `02_google_sheets` and `04_python` folders for all cleaning documentation.
+
+
+
+## Cleaned Dataset
+
+| File | Description |
+|------|-------------|
+| `ecommerce_sales_cleaned.csv` | Cleaned dataset produced at the conclusion 
+of Phase 1. Contains all original 14 columns plus 5 new calculated columns — 
+Outlier_Flag, Profit_Margin_Pct, Year, Month, and Month_Name. 
+Column headers have been standardised for MySQL compatibility. 
+Total columns: 19. Total rows: 5,000. |
+
+## Column Name Changes for MySQL Compatibility
+
+The following column names were standardised from the raw dataset 
+to ensure clean importation into MySQL Workbench 8.0 CE:
+
+| Original Name | Cleaned Name |
+|---------------|-------------|
+| Order ID | Order_ID |
+| Order Date | Order_Date |
+| Customer Name | Customer_Name |
+| Sub-Category | Sub_Category |
+| Product Name | Product_Name |
+| Unit Price | Unit_Price |
+| Payment Mode | Payment_Mode |
+| Outlier Flag | Outlier_Flag |
+| Profit Margin % | Profit_Margin_Pct |
+| Month Name | Month_Name |
