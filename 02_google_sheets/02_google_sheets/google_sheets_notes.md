@@ -78,3 +78,6 @@ project is completed.
 
 
 | June 2026 | Step 12 | Month Name Column Added | Cleaned Data | Added Column S — Month Name — using TEXT formula with MMMM format referencing Order Date column. Applied across all 5,000 rows. COUNTUNIQUE verified all 12 month names present. Temporary formula deleted after verification. | Column R stores month as a number for calculations and SQL. Column S stores the full month name for charts, pivot tables, and human readable reports. Both serve different but equally important analytical purposes. | Month Name column populated across all 5,000 rows. S2 returned October consistent with R2 returning 10. All 12 month names confirmed present. Cleaned Data tab now contains 19 columns total. |
+
+
+| June 2026 | Step 13 | Cleaned Dataset Exported and Uploaded to GitHub | Cleaned Data | Renamed 10 column headers for MySQL compatibility — removed spaces, hyphens, and special characters. Exported Cleaned Data tab as ecommerce_sales_cleaned.csv via File Download CSV. Uploaded to 01_dataset folder on GitHub. | MySQL requires clean column names without spaces or special characters for error-free importation. Standardising before export prevents import failures in Phase 3. | 19 headers standardised. Cleaned CSV exported with all 5,000 rows and 19 columns. Uploaded to GitHub alongside raw dataset. |
