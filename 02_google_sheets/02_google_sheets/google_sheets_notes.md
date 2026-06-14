@@ -68,3 +68,5 @@ project is completed.
 
 
 | June 2026 | Step 8 | Outlier Flag Column Added | Cleaned Data | Added Column O — Outlier Flag — using IF formula. Transactions with Profit above 48,831.53 marked Yes. All others marked No. Formula applied across all 5,000 rows and verified using column filter. | Preserves the 223 high profit outliers in the dataset while making them clearly identifiable for conscious inclusion or exclusion in specific analyses. | 223 Yes rows confirmed — matching validation check count exactly. 4,777 No rows confirmed. |
+
+| June 2026 | Step 9 | Profit Margin Percentage Column Added | Cleaned Data | Added Column P — Profit Margin % — using ROUND formula calculating Profit divided by Sales multiplied by 100 rounded to 2 decimal places. Applied across all 5,000 rows. Average verified at 14.92% using temporary AVERAGE formula. | Raw profit amounts do not reveal transaction efficiency. Profit Margin % enables fair comparison across categories, regions, and discount levels regardless of transaction size. | 14.92% average profit margin confirmed across all 5,000 rows. First transaction returned 15.26%. Column formatted as number with 2 decimal places. |
