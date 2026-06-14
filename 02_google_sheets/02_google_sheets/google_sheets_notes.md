@@ -53,6 +53,8 @@ project is completed.
 | June 2026 | Step 4 | Working Copy Created | Cleaned Data | Used Paste Special > Values Only to copy raw data into Cleaned Data tab. | To create an independent working copy with no links back to the raw data tab. | 5,000 rows and 14 columns pasted as values only. |
 | June 2026 | Step 5 | Header Row Formatted | Cleaned Data | Froze Row 1, bolded all 14 headers, applied filter to all columns. | To maintain column visibility when scrolling 5,000 rows and enable column-level inspection. | Row frozen, headers bold, filter arrows visible on all 14 columns. |
 
+| June 2026 | Step 10 | Year Column Added | Cleaned Data | Added Column Q — Year — using YEAR formula referencing Order Date column. Applied across all 5,000 rows. COUNTUNIQUE verified 3 unique years — 2023, 2024, 2025. Temporary formula deleted after verification. | Standalone Year column enables faster grouping and filtering in Google Sheets and SQL without complex date range conditions. Critical given 2023 covers only October to December. | Year column populated across all 5,000 rows. 2024 confirmed in Q2. Three unique years confirmed matching expected date range. |
+
 ---
 
 *Further entries will be added here as Phase 1 progresses.*
