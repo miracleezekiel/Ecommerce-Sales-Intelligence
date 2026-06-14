@@ -75,3 +75,6 @@ project is completed.
 
 
 | June 2026 | Step 11 | Month Column Added | Cleaned Data | Added Column R — Month — using MONTH formula referencing Order Date column. Applied across all 5,000 rows. COUNTUNIQUE verified 12 unique months present. Temporary formula deleted after verification. | Standalone Month column enables instant grouping and filtering by month in Google Sheets and SQL without complex date range conditions. Supports monthly trend and seasonal pattern analysis. | Month column populated across all 5,000 rows. R2 returned 10 confirming October as first transaction month. All 12 months confirmed present across dataset. |
+
+
+| June 2026 | Step 12 | Month Name Column Added | Cleaned Data | Added Column S — Month Name — using TEXT formula with MMMM format referencing Order Date column. Applied across all 5,000 rows. COUNTUNIQUE verified all 12 month names present. Temporary formula deleted after verification. | Column R stores month as a number for calculations and SQL. Column S stores the full month name for charts, pivot tables, and human readable reports. Both serve different but equally important analytical purposes. | Month Name column populated across all 5,000 rows. S2 returned October consistent with R2 returning 10. All 12 month names confirmed present. Cleaned Data tab now contains 19 columns total. |
