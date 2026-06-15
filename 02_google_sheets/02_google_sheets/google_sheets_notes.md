@@ -81,3 +81,5 @@ project is completed.
 
 
 | June 2026 | Step 13 | Cleaned Dataset Exported and Uploaded to GitHub | Cleaned Data | Renamed 10 column headers for MySQL compatibility — removed spaces, hyphens, and special characters. Exported Cleaned Data tab as ecommerce_sales_cleaned.csv via File Download CSV. Uploaded to 01_dataset folder on GitHub. | MySQL requires clean column names without spaces or special characters for error-free importation. Standardising before export prevents import failures in Phase 3. | 19 headers standardised. Cleaned CSV exported with all 5,000 rows and 19 columns. Uploaded to GitHub alongside raw dataset. |
+
+| June 2026 | Phase 2 Step 1 | Data Exploration Section 1 — Dataset Overview | Data Exploration | Built headline metrics table with 10 key figures. Applied accounting format to monetary rows, date format to date rows, removed decimal places from count rows. Added borders. | Headline numbers establish business scale and context before deeper breakdowns begin. | Total revenue 533,666,024.35. Total profit 79,708,734.91. Average order value 106,733.20. 4,844 unique customers. 223 outliers confirmed. |
