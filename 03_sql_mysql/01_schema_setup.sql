@@ -4,14 +4,33 @@
 -- Description: Creates the database and table structure
 -- Tool: MySQL Workbench 8.0 CE
 -- Phase: Phase 3 — SQL Analysis
--- Status: To be completed in Phase 3
 -- ============================================================
 
--- This file will contain:
--- 1. CREATE DATABASE statement for ecommerce_sales_db
--- 2. USE database statement
--- 3. CREATE TABLE statement for ecommerce_sales
---    with all 14 columns, correct data types, and constraints
--- 4. Any index definitions needed for query performance
+-- Step 1: Create the database
+CREATE DATABASE IF NOT EXISTS ecommerce_sales_db;
 
--- Content will be added when Phase 3 begins.
+-- Step 2: Select the database
+USE ecommerce_sales_db;
+
+-- Step 3: Create the ecommerce_sales table
+CREATE TABLE IF NOT EXISTS ecommerce_sales (
+    Order_ID          INT,
+    Order_Date        DATE,
+    Customer_Name     VARCHAR(100),
+    Region            VARCHAR(50),
+    City              VARCHAR(50),
+    Category          VARCHAR(50),
+    Sub_Category      VARCHAR(50),
+    Product_Name      VARCHAR(150),
+    Quantity          INT,
+    Unit_Price        DECIMAL(10,2),
+    Discount          INT,
+    Sales             DECIMAL(10,2),
+    Profit            DECIMAL(10,2),
+    Payment_Mode      VARCHAR(50),
+    Outlier_Flag      VARCHAR(5),
+    Profit_Margin_Pct DECIMAL(10,2),
+    Year              INT,
+    Month             INT,
+    Month_Name        VARCHAR(20)
+);
