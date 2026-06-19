@@ -73,3 +73,28 @@ ORDER BY Total_Sales DESC;
 -- Electronics highest margin at 15.39% despite ranking 6th in revenue
 -- Beauty lowest margin at 14.38%
 -- Revenue spread of only 1.75% across all 10 categories
+
+
+-- ============================================================
+-- KPI-004: Discount Impact on Sales and Profit
+-- Business Question: How does discount level affect
+-- average order value and total profit?
+-- ============================================================
+
+SELECT 
+    Discount,
+    COUNT(*) AS Total_Transactions,
+    ROUND(SUM(Sales), 2) AS Total_Sales,
+    ROUND(SUM(Profit), 2) AS Total_Profit,
+    ROUND(AVG(Sales), 2) AS Avg_Order_Value,
+    ROUND(AVG(Profit_Margin_Pct), 2) AS Avg_Profit_Margin_Pct,
+    ROUND((COUNT(*) / (SELECT COUNT(*) 
+        FROM ecommerce_sales)) * 100, 2) AS Pct_of_Transactions
+FROM ecommerce_sales
+GROUP BY Discount
+ORDER BY Discount ASC;
+
+-- Result: Discount trap confirmed
+-- Avg order value falls from 117,340.72 at 0% to 94,618.46 at 20%
+-- Total profit falls consistently at every discount increase
+-- 20% discount has most transactions (1,021) but lowest revenue and profit
