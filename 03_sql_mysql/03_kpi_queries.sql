@@ -122,3 +122,35 @@ ORDER BY Month ASC;
 -- February weakest at 39,755,842.60 (7.45% of revenue)
 -- Revenue spread of only 2.06% between strongest and weakest month
 -- Relatively flat seasonal distribution across all 12 months
+
+
+-- ============================================================
+-- KPI-006: Year Over Year Revenue Comparison
+-- Business Question: How does revenue and profit compare
+-- between 2024 and 2025 on a monthly basis?
+-- Note: 2023 excluded — partial year October to December only
+-- Note: October 2025 is partial — dataset ends early October
+-- Note: November and December 2025 show zero — no data yet
+-- ============================================================
+
+SELECT 
+    Month,
+    Month_Name,
+    ROUND(SUM(CASE WHEN Year = 2024 
+        THEN Sales ELSE 0 END), 2) AS Sales_2024,
+    ROUND(SUM(CASE WHEN Year = 2025 
+        THEN Sales ELSE 0 END), 2) AS Sales_2025,
+    ROUND(SUM(CASE WHEN Year = 2024 
+        THEN Profit ELSE 0 END), 2) AS Profit_2024,
+    ROUND(SUM(CASE WHEN Year = 2025 
+        THEN Profit ELSE 0 END), 2) AS Profit_2025
+FROM ecommerce_sales
+WHERE Year IN (2024, 2025)
+GROUP BY Month, Month_Name
+ORDER BY Month ASC;
+
+-- Result: 2025 tracking closely with 2024 Jan to Aug
+-- May strongest month both years -- 2025 ahead at 26,010,928.65
+-- September 2025 notable drop of 4.3M vs September 2024
+-- October 2025 partial month -- dataset ends early October 2025
+-- November and December 2025 show zero -- no data recorded
