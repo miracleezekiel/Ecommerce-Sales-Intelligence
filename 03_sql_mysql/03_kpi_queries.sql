@@ -182,3 +182,26 @@ ORDER BY Total_Sales DESC;
 -- COD has highest margin at 15.07%
 -- UPI lowest revenue share at 19.10%
 -- All five modes balanced between 19.76% and 20.20% of transactions
+
+-- ============================================================
+-- KPI-008: Profit Margin Analysis by Region and Category
+-- Business Question: What is the overall profit margin
+-- and how does it vary across regions and categories?
+-- ============================================================
+
+SELECT 
+    Region,
+    Category,
+    COUNT(*) AS Total_Transactions,
+    ROUND(SUM(Sales), 2) AS Total_Sales,
+    ROUND(SUM(Profit), 2) AS Total_Profit,
+    ROUND(AVG(Profit_Margin_Pct), 2) AS Avg_Profit_Margin_Pct
+FROM ecommerce_sales
+GROUP BY Region, Category
+ORDER BY Region ASC, Avg_Profit_Margin_Pct DESC;
+
+-- Result: 40 rows total -- 4 regions x 10 categories
+-- Most profitable: East-Clothing at 15.85% margin
+-- Least profitable: West-Beauty at 14.49% margin
+-- West region shows weakest overall margin profile
+-- East region shows strongest margin profile
