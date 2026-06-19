@@ -49,3 +49,27 @@ ORDER BY Total_Sales DESC;
 -- Result: North leads revenue 143,578,246.10 (26.90%)
 -- South has strongest margin at 14.98%
 -- All four regions within 3.81% of each other in revenue share
+
+
+-- ============================================================
+-- KPI-003: Sales and Profit by Category
+-- Business Question: Which product category generates the most
+-- revenue and which is the most profitable per sale?
+-- ============================================================
+
+SELECT 
+    Category,
+    COUNT(*) AS Total_Transactions,
+    ROUND(SUM(Sales), 2) AS Total_Sales,
+    ROUND(SUM(Profit), 2) AS Total_Profit,
+    ROUND(AVG(Profit_Margin_Pct), 2) AS Avg_Profit_Margin_Pct,
+    ROUND((SUM(Sales) / (SELECT SUM(Sales) 
+        FROM ecommerce_sales)) * 100, 2) AS Pct_of_Total_Revenue
+FROM ecommerce_sales
+GROUP BY Category
+ORDER BY Total_Sales DESC;
+
+-- Result: Home Decor leads revenue at 57,233,222.35 (10.72%)
+-- Electronics highest margin at 15.39% despite ranking 6th in revenue
+-- Beauty lowest margin at 14.38%
+-- Revenue spread of only 1.75% across all 10 categories
