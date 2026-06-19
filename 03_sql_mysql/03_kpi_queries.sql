@@ -205,3 +205,35 @@ ORDER BY Region ASC, Avg_Profit_Margin_Pct DESC;
 -- Least profitable: West-Beauty at 14.49% margin
 -- West region shows weakest overall margin profile
 -- East region shows strongest margin profile
+
+-- ============================================================
+-- KPI-009: Customer Repeat Purchase Analysis
+-- Business Question: How many customers placed more than
+-- one order and what percentage of customers are they?
+-- ============================================================
+
+SELECT 
+    CASE 
+        WHEN Order_Count = 1 THEN 'One-Time Customer'
+        WHEN Order_Count = 2 THEN 'Two Orders'
+        WHEN Order_Count = 3 THEN 'Three Orders'
+        ELSE 'Four or More Orders'
+    END AS Customer_Segment,
+    COUNT(*) AS Customer_Count,
+    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) 
+        OVER(), 2) AS Pct_of_Customers
+FROM (
+    SELECT 
+        Customer_Name, 
+        COUNT(*) AS Order_Count
+    FROM ecommerce_sales
+    GROUP BY Customer_Name
+) AS Customer_Orders
+GROUP BY Customer_Segment
+ORDER BY Customer_Count DESC;
+
+-- Result: 4,690 One-Time Customers -- 96.82% of all customers
+-- 152 Two-Order Customers -- 3.14%
+-- Only 2 Three-Order Customers -- 0.04%
+-- Zero customers placed four or more orders
+-- Repeat purchase rate confirmed below 5% -- ISSUE-004 validated
