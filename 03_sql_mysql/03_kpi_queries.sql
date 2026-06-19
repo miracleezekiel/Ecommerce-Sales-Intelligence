@@ -98,3 +98,27 @@ ORDER BY Discount ASC;
 -- Avg order value falls from 117,340.72 at 0% to 94,618.46 at 20%
 -- Total profit falls consistently at every discount increase
 -- 20% discount has most transactions (1,021) but lowest revenue and profit
+
+-- ============================================================
+-- KPI-005: Monthly Revenue Trend
+-- Business Question: What is the monthly revenue trend
+-- and which months consistently drive the highest sales?
+-- ============================================================
+
+SELECT 
+    Month,
+    Month_Name,
+    COUNT(*) AS Total_Transactions,
+    ROUND(SUM(Sales), 2) AS Total_Sales,
+    ROUND(SUM(Profit), 2) AS Total_Profit,
+    ROUND(AVG(Sales), 2) AS Avg_Order_Value,
+    ROUND((SUM(Sales) / (SELECT SUM(Sales) 
+        FROM ecommerce_sales)) * 100, 2) AS Pct_of_Total_Revenue
+FROM ecommerce_sales
+GROUP BY Month, Month_Name
+ORDER BY Month ASC;
+
+-- Result: May strongest month at 50,755,715.20 (9.51% of revenue)
+-- February weakest at 39,755,842.60 (7.45% of revenue)
+-- Revenue spread of only 2.06% between strongest and weakest month
+-- Relatively flat seasonal distribution across all 12 months
