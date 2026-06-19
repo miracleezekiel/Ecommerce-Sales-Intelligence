@@ -154,3 +154,31 @@ ORDER BY Month ASC;
 -- September 2025 notable drop of 4.3M vs September 2024
 -- October 2025 partial month -- dataset ends early October 2025
 -- November and December 2025 show zero -- no data recorded
+
+
+-- ============================================================
+-- KPI-007: Payment Mode Analysis
+-- Business Question: Which payment mode is used most
+-- frequently and does payment method influence
+-- average order value?
+-- ============================================================
+
+SELECT 
+    Payment_Mode,
+    COUNT(*) AS Total_Transactions,
+    ROUND(SUM(Sales), 2) AS Total_Sales,
+    ROUND(SUM(Profit), 2) AS Total_Profit,
+    ROUND(AVG(Sales), 2) AS Avg_Order_Value,
+    ROUND(AVG(Profit_Margin_Pct), 2) AS Avg_Profit_Margin_Pct,
+    ROUND((COUNT(*) / (SELECT COUNT(*) 
+        FROM ecommerce_sales)) * 100, 2) AS Pct_of_Transactions,
+    ROUND((SUM(Sales) / (SELECT SUM(Sales) 
+        FROM ecommerce_sales)) * 100, 2) AS Pct_of_Revenue
+FROM ecommerce_sales
+GROUP BY Payment_Mode
+ORDER BY Total_Sales DESC;
+
+-- Result: Net Banking leads revenue at 111,465,516.05 (20.89%)
+-- COD has highest margin at 15.07%
+-- UPI lowest revenue share at 19.10%
+-- All five modes balanced between 19.76% and 20.20% of transactions
