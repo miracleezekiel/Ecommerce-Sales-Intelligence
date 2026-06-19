@@ -4,15 +4,23 @@
 -- Description: SQL queries for key business performance metrics
 -- Tool: MySQL Workbench 8.0 CE
 -- Phase: Phase 3 — SQL Analysis
--- Status: To be completed in Phase 3
 -- ============================================================
 
--- This file will contain queries covering:
--- 1. Total revenue and total profit
--- 2. Average order value
--- 3. Profit margin by category and region
--- 4. Monthly and yearly sales trends
--- 5. Top performing products and sub-categories
--- 6. Payment mode distribution
+-- ============================================================
+-- KPI-001: Overall Business Performance
+-- Business Question: What is the total revenue, profit,
+-- and average order value across all transactions?
+-- ============================================================
 
--- Content will be added when Phase 3 begins.
+SELECT 
+    COUNT(*) AS Total_Transactions,
+    ROUND(SUM(Sales), 2) AS Total_Revenue,
+    ROUND(SUM(Profit), 2) AS Total_Profit,
+    ROUND(AVG(Sales), 2) AS Avg_Order_Value,
+    ROUND(AVG(Profit), 2) AS Avg_Profit_Per_Order,
+    ROUND(AVG(Profit_Margin_Pct), 2) AS Avg_Profit_Margin_Pct
+FROM ecommerce_sales;
+
+-- Result: 5000 transactions | Revenue 533,666,024.35 |
+-- Profit 79,708,734.91 | AOV 106,733.20 |
+-- Avg Profit Per Order 15,941.75 | Avg Margin 14.92%
