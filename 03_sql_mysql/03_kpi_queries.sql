@@ -24,3 +24,28 @@ FROM ecommerce_sales;
 -- Result: 5000 transactions | Revenue 533,666,024.35 |
 -- Profit 79,708,734.91 | AOV 106,733.20 |
 -- Avg Profit Per Order 15,941.75 | Avg Margin 14.92%
+
+
+
+
+-- ============================================================
+-- KPI-002: Sales and Profit by Region
+-- Business Question: Which region generates the highest
+-- revenue and which has the strongest profit margin?
+-- ============================================================
+
+SELECT 
+    Region,
+    COUNT(*) AS Total_Transactions,
+    ROUND(SUM(Sales), 2) AS Total_Sales,
+    ROUND(SUM(Profit), 2) AS Total_Profit,
+    ROUND(AVG(Profit_Margin_Pct), 2) AS Avg_Profit_Margin_Pct,
+    ROUND((SUM(Sales) / (SELECT SUM(Sales) 
+        FROM ecommerce_sales)) * 100, 2) AS Pct_of_Total_Revenue
+FROM ecommerce_sales
+GROUP BY Region
+ORDER BY Total_Sales DESC;
+
+-- Result: North leads revenue 143,578,246.10 (26.90%)
+-- South has strongest margin at 14.98%
+-- All four regions within 3.81% of each other in revenue share
