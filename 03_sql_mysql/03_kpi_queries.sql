@@ -327,3 +327,40 @@ LIMIT 20;
 -- Purchases spread across 5 categories -- churn is business-wide
 -- Himmat Khare highest profit among lost customers at 87,688.21
 -- Combined value of top 6 lost customers -- 2,326,170.00
+
+-- ============================================================
+-- KPI-013: Churn Risk by Region
+-- Business Question: Which regions have the highest
+-- concentration of single-purchase customers?
+-- ============================================================
+
+SELECT 
+    Region,
+    COUNT(DISTINCT Customer_Name) AS Total_Customers,
+    SUM(CASE WHEN Order_Count = 1 
+        THEN 1 ELSE 0 END) AS One_Time_Customers,
+    SUM(CASE WHEN Order_Count > 1 
+        THEN 1 ELSE 0 END) AS Repeat_Customers,
+    ROUND(SUM(CASE WHEN Order_Count = 1 
+        THEN 1 ELSE 0 END) * 100.0 / 
+        COUNT(DISTINCT Customer_Name), 2) AS Churn_Risk_Pct,
+    ROUND(SUM(CASE WHEN Order_Count > 1 
+        THEN 1 ELSE 0 END) * 100.0 / 
+        COUNT(DISTINCT Customer_Name), 2) AS Retention_Rate_Pct
+FROM (
+    SELECT 
+        Customer_Name,
+        Region,
+        COUNT(*) AS Order_Count
+    FROM ecommerce_sales
+    GROUP BY Customer_Name, Region
+) AS Customer_Region_Orders
+GROUP BY Region
+ORDER BY Churn_Risk_Pct DESC;
+
+-- Result: North highest churn risk at 99.61% -- only 5 repeat customers
+-- East 99.44% -- 7 repeat customers
+-- West 99.27% -- 9 repeat customers
+-- South lowest churn risk at 99.25% -- most viable pilot region
+-- Gap between best and worst region only 0.36 percentage points
+-- Retention crisis confirmed as business-wide not regionally isolated
