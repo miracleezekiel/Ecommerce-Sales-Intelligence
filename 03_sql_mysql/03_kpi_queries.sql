@@ -272,3 +272,28 @@ ORDER BY Repeat_Rate_Pct DESC;
 -- East 0.56% -- 7 repeat customers
 -- North lowest at 0.39% -- 5 repeat customers
 -- No region exceeds 1% repeat rate -- retention crisis is business-wide
+
+-- ============================================================
+-- KPI-011: Customer Lifetime Value Analysis
+-- Business Question: Which customers represent the highest
+-- lifetime value based on total spend across all orders?
+-- ============================================================
+
+SELECT 
+    Customer_Name,
+    COUNT(*) AS Total_Orders,
+    ROUND(SUM(Sales), 2) AS Total_Lifetime_Value,
+    ROUND(AVG(Sales), 2) AS Avg_Order_Value,
+    ROUND(SUM(Profit), 2) AS Total_Profit_Generated,
+    MIN(Order_Date) AS First_Order_Date,
+    MAX(Order_Date) AS Last_Order_Date
+FROM ecommerce_sales
+GROUP BY Customer_Name
+ORDER BY Total_Lifetime_Value DESC
+LIMIT 20;
+
+-- Result: Aaryahi Madan highest value at 650,151.90 -- 3 orders
+-- All other top 5 customers placed exactly 2 orders
+-- Top customers spend 2x above dataset average order value
+-- Sumer Mann most profitable at 21.26% margin of lifetime value
+-- High lifetime value driven by order size not purchase frequency
