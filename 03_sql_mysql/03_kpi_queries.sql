@@ -297,3 +297,33 @@ LIMIT 20;
 -- Top customers spend 2x above dataset average order value
 -- Sumer Mann most profitable at 21.26% margin of lifetime value
 -- High lifetime value driven by order size not purchase frequency
+
+-- ============================================================
+-- KPI-012: Single Purchase Customer Analysis
+-- Business Question: Which customers placed only one order
+-- and what categories did they purchase from?
+-- ============================================================
+
+SELECT 
+    es.Customer_Name,
+    es.Category,
+    es.Region,
+    es.Order_Date,
+    ROUND(es.Sales, 2) AS Order_Value,
+    ROUND(es.Profit, 2) AS Profit
+FROM ecommerce_sales es
+INNER JOIN (
+    SELECT Customer_Name
+    FROM ecommerce_sales
+    GROUP BY Customer_Name
+    HAVING COUNT(*) = 1
+) AS Single_Purchase_Customers
+ON es.Customer_Name = Single_Purchase_Customers.Customer_Name
+ORDER BY es.Sales DESC
+LIMIT 20;
+
+-- Result: Top lost customer Rohan Khare -- 398,485.00 Sports West
+-- All top 6 lost customers spent above 370,000 on single orders
+-- Purchases spread across 5 categories -- churn is business-wide
+-- Himmat Khare highest profit among lost customers at 87,688.21
+-- Combined value of top 6 lost customers -- 2,326,170.00
