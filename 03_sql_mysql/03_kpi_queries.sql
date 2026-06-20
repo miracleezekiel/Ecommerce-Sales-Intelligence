@@ -237,3 +237,38 @@ ORDER BY Customer_Count DESC;
 -- Only 2 Three-Order Customers -- 0.04%
 -- Zero customers placed four or more orders
 -- Repeat purchase rate confirmed below 5% -- ISSUE-004 validated
+
+-- ============================================================
+-- KPI-010: Repeat Purchase Rate by Region
+-- Business Question: What is the repeat purchase rate
+-- and how does it vary by region?
+-- Note: Regional query tracks region-level behaviour.
+-- Cross-region customers may appear in multiple regions.
+-- ============================================================
+
+SELECT 
+    Region,
+    COUNT(DISTINCT Customer_Name) AS Total_Customers,
+    SUM(CASE WHEN Order_Count = 1 
+        THEN 1 ELSE 0 END) AS One_Time_Customers,
+    SUM(CASE WHEN Order_Count > 1 
+        THEN 1 ELSE 0 END) AS Repeat_Customers,
+    ROUND(SUM(CASE WHEN Order_Count > 1 
+        THEN 1 ELSE 0 END) * 100.0 / 
+        COUNT(DISTINCT Customer_Name), 2) AS Repeat_Rate_Pct
+FROM (
+    SELECT 
+        Customer_Name,
+        Region,
+        COUNT(*) AS Order_Count
+    FROM ecommerce_sales
+    GROUP BY Customer_Name, Region
+) AS Customer_Region_Orders
+GROUP BY Region
+ORDER BY Repeat_Rate_Pct DESC;
+
+-- Result: South highest repeat rate at 0.75% -- 9 repeat customers
+-- West 0.73% -- 9 repeat customers
+-- East 0.56% -- 7 repeat customers
+-- North lowest at 0.39% -- 5 repeat customers
+-- No region exceeds 1% repeat rate -- retention crisis is business-wide
