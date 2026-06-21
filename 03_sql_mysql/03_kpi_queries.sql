@@ -201,10 +201,12 @@ GROUP BY Region, Category
 ORDER BY Region ASC, Avg_Profit_Margin_Pct DESC;
 
 -- Result: 40 rows total -- 4 regions x 10 categories
--- Most profitable: East-Clothing at 15.85% margin
--- Least profitable: West-Beauty at 14.49% margin
+-- Note: KPI-015 global ranking reveals North-Electronics
+-- is the true top performer at 16.23% -- not East-Clothing
+-- East-Clothing is top within the East region only at 15.85%
+-- West-Beauty confirmed least profitable at 14.49%
 -- West region shows weakest overall margin profile
--- East region shows strongest margin profile
+-- East region shows strongest overall margin profile
 
 -- ============================================================
 -- KPI-009: Customer Repeat Purchase Analysis
@@ -394,3 +396,29 @@ ORDER BY Outlier_Flag DESC;
 -- Outlier margin 21.55% vs non-outlier 14.61%
 -- Removing outliers drops avg profit per order by 13.0%
 -- from 15,941.75 to 13,880.37 -- confirming ISSUE-001 inflation effect
+
+-- ============================================================
+-- KPI-015: Category and Region Cross Analysis
+-- Business Question: Which category and region combination
+-- generates the highest profit margin?
+-- ============================================================
+
+SELECT 
+    RANK() OVER (ORDER BY AVG(Profit_Margin_Pct) DESC) 
+        AS Margin_Rank,
+    Region,
+    Category,
+    COUNT(*) AS Total_Transactions,
+    ROUND(SUM(Sales), 2) AS Total_Sales,
+    ROUND(SUM(Profit), 2) AS Total_Profit,
+    ROUND(AVG(Profit_Margin_Pct), 2) AS Avg_Profit_Margin_Pct
+FROM ecommerce_sales
+GROUP BY Region, Category
+ORDER BY Margin_Rank ASC;
+
+-- Result: 40 combinations ranked -- 4 regions x 10 categories
+-- Rank 1: North-Electronics at 16.23% -- most profitable globally
+-- Rank 2: East-Clothing at 15.85%
+-- Rank 40: North-Beauty at 13.28% -- least profitable globally
+-- North is most polarised region -- holds rank 1 and ranks 39 and 40
+-- Margin spread across all 40 combinations is 2.95 percentage points
