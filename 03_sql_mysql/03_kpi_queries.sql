@@ -364,3 +364,33 @@ ORDER BY Churn_Risk_Pct DESC;
 -- South lowest churn risk at 99.25% -- most viable pilot region
 -- Gap between best and worst region only 0.36 percentage points
 -- Retention crisis confirmed as business-wide not regionally isolated
+
+
+-- ============================================================
+-- KPI-014: Outlier Revenue Impact Analysis
+-- Business Question: What is the revenue impact of the 223
+-- high profit outlier transactions versus the remaining 4,777?
+-- ============================================================
+
+SELECT 
+    Outlier_Flag,
+    COUNT(*) AS Total_Transactions,
+    ROUND(SUM(Sales), 2) AS Total_Sales,
+    ROUND(SUM(Profit), 2) AS Total_Profit,
+    ROUND(AVG(Sales), 2) AS Avg_Order_Value,
+    ROUND(AVG(Profit_Margin_Pct), 2) AS Avg_Profit_Margin_Pct,
+    ROUND(AVG(Profit), 2) AS Avg_Profit_Per_Order,
+    ROUND((SUM(Sales) / (SELECT SUM(Sales) 
+        FROM ecommerce_sales)) * 100, 2) AS Pct_of_Total_Revenue,
+    ROUND((SUM(Profit) / (SELECT SUM(Profit) 
+        FROM ecommerce_sales)) * 100, 2) AS Pct_of_Total_Profit
+FROM ecommerce_sales
+GROUP BY Outlier_Flag
+ORDER BY Outlier_Flag DESC;
+
+-- Result: 223 outliers generate 11.78% revenue and 16.81% profit
+-- from only 4.46% of all transactions
+-- Outlier avg order value 282,012.98 -- 2.86x above non-outlier
+-- Outlier margin 21.55% vs non-outlier 14.61%
+-- Removing outliers drops avg profit per order by 13.0%
+-- from 15,941.75 to 13,880.37 -- confirming ISSUE-001 inflation effect
