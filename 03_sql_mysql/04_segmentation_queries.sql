@@ -69,3 +69,37 @@ ORDER BY Customer_Segment ASC;
 -- Three Orders -- 2 customers -- 0.15% revenue -- avg 413,509.50
 -- Three-Order customers spend 3.88x more than One-Time customers
 -- All totals verified -- 4,844 customers -- 5,000 orders -- 100.00%
+
+-- ============================================================
+-- SEG-003: Transaction Value Segments
+-- Business Question: How are transactions distributed across
+-- high, mid, and low value tiers and which tier drives
+-- the most profit?
+-- ============================================================
+
+SELECT 
+    CASE 
+        WHEN Sales >= 150000 THEN 'High Value — 150,000 and above'
+        WHEN Sales >= 75000 THEN 'Mid Value — 75,000 to 149,999'
+        ELSE 'Low Value — Below 75,000'
+    END AS Transaction_Segment,
+    COUNT(*) AS Total_Transactions,
+    ROUND(SUM(Sales), 2) AS Total_Sales,
+    ROUND(SUM(Profit), 2) AS Total_Profit,
+    ROUND(AVG(Sales), 2) AS Avg_Order_Value,
+    ROUND(AVG(Profit_Margin_Pct), 2) AS Avg_Profit_Margin_Pct,
+    ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) 
+        FROM ecommerce_sales), 2) AS Pct_of_Transactions,
+    ROUND(SUM(Sales) * 100.0 / (SELECT SUM(Sales) 
+        FROM ecommerce_sales), 2) AS Pct_of_Revenue
+FROM ecommerce_sales
+GROUP BY Transaction_Segment
+ORDER BY Avg_Order_Value DESC;
+
+-- Result: High Value -- 1,326 transactions -- 26.52% of orders
+-- generates 56.21% of total revenue -- avg 226,212.12
+-- Mid Value -- 1,350 transactions -- 27.00% -- generates 27.80% revenue
+-- Low Value -- 2,324 transactions -- 46.48% of orders
+-- generates only 15.99% revenue -- avg 36,717.57
+-- High Value has highest margin at 15.02%
+-- Business is structurally driven by high value transactions
