@@ -103,3 +103,27 @@ ORDER BY Avg_Order_Value DESC;
 -- generates only 15.99% revenue -- avg 36,717.57
 -- High Value has highest margin at 15.02%
 -- Business is structurally driven by high value transactions
+
+-- ============================================================
+-- SEG-004: Category Performance Within Each Discount Level
+-- Business Question: How does each product category perform
+-- across different discount levels?
+-- ============================================================
+
+SELECT 
+    Category,
+    Discount,
+    COUNT(*) AS Total_Transactions,
+    ROUND(SUM(Sales), 2) AS Total_Sales,
+    ROUND(SUM(Profit), 2) AS Total_Profit,
+    ROUND(AVG(Sales), 2) AS Avg_Order_Value,
+    ROUND(AVG(Profit_Margin_Pct), 2) AS Avg_Profit_Margin_Pct
+FROM ecommerce_sales
+GROUP BY Category, Discount
+ORDER BY Category ASC, Discount ASC;
+
+-- Result: 50 rows -- 10 categories x 5 discount levels
+-- Each row shows one category at one specific discount level
+-- Reveals whether discount sensitivity varies by category
+-- or whether the discount trap applies uniformly across all products
+-- Findings feed directly into Phase 4 CRM and case study recommendations
