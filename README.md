@@ -82,8 +82,8 @@ Outlier_Flag, Profit_Margin_Pct, Year, Month, Month_Name
 | Stage | Description | Status |
 |-------|-------------|--------|
 | Data Cleaning and Quality Assessment | Full dataset audit, validation checks, issue documentation, and calculated column additions | ✅ Complete |
+| SQL Analysis and Business Intelligence | 15 KPI queries, 4 segmentation queries, and 3 churn analysis queries written and executed in MySQL Workbench 8.0 CE against 5,000 transaction records | ✅ Complete |
 | Exploratory Data Analysis | Sales trends, profit margins, regional performance, and discount impact analysis | 🔄 In Progress |
-| SQL Analysis and Business Intelligence | KPI queries, segmentation analysis, and retention queries in MySQL | 🔜 Upcoming |
 | CRM and Customer Retention Analysis | Customer frequency analysis, churn identification, and retention recommendations | 🔜 Upcoming |
 | Case Study and Publishing | Full written case study, GitHub publication, and content release | 🔜 Upcoming |
 
@@ -102,6 +102,14 @@ data cleaning stage:
 | Profit outliers | 223 high-profit transactions identified above the IQR upper bound of 48,831.53 |
 | Incomplete 2023 data | October to December only — excluded from year-over-year comparisons |
 | Customer repeat rate | Below 5% — central focus of the CRM and retention analysis stage |
+
+| Repeat purchase rate | 96.82% of all customers placed exactly one order and never returned across all four regions |
+| Repeat customer value | Two-order customers spend 2.03x more per lifetime than one-time customers. Three-order customers spend 3.88x more |
+| Discount trap confirmed in SQL | Average order value falls from 117,340.72 at zero discount to 94,618.46 at 20% discount — a 19.4% reduction |
+| Most profitable combination | North-Electronics at 16.23% average profit margin — rank 1 of 40 region-category combinations |
+| Least profitable combination | North-Beauty at 13.28% average profit margin — rank 40 of 40 |
+| High value transaction impact | 1,326 transactions — 26.52% of orders — generate 56.21% of total revenue |
+| Outlier impact | 223 outlier transactions generate 16.81% of total profit from only 4.46% of transactions |
 
 ---
 
