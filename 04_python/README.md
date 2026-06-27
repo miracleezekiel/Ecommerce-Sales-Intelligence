@@ -98,6 +98,6 @@ validated before being committed to the repository.
 | Cell 8 | Build RFM Table | groupby and agg() calculate Recency, Frequency, Monetary per customer | ✅ Complete |
 | Cell 9 | Assign RFM Scores | pd.cut() converts raw RFM values to 1-2-3 score bands per dimension | ✅ Complete |
 | Cell 10 | Assign Segments | Custom function assigns Champion, Loyal, Promising, At Risk, Lost labels | ✅ Complete |
-| Cell 11 | Visualise Segments | Bar chart showing customer count per segment | 🔄 In Progress |
-| Cell 12 | Segment Revenue Analysis | Revenue and average spend per segment | 🔜 Upcoming |
+| Cell 11 | Visualise Segments | Bar chart showing customer count per segment | ✅ Complete |
+| Cell 12 | Segment Revenue Analysis | Revenue and average spend per segment | 🔄 In Progress |
 | Cell 13 | Export Segmented Data | Exports full RFM table with segments to CSV | 🔜 Upcoming |
