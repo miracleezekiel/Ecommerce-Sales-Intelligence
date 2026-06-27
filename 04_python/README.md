@@ -81,3 +81,23 @@ All Python work follows this two-step process:
 
 This ensures every script in this folder has been fully 
 validated before being committed to the repository.
+
+---
+
+## Notebook Progress — data_cleaning_notebook.ipynb
+
+| Cell | Title | What It Does | Status |
+|------|-------|-------------|--------|
+| Cell 1 | Import Libraries | Imports pandas, matplotlib, and seaborn toolboxes | ✅ Complete |
+| Cell 2 | Load Dataset | Loads ecommerce_sales_cleaned.csv — confirms 5,000 rows and 19 columns | ✅ Complete |
+| Cell 3 | Preview Data | df.head() shows first 5 rows to confirm data loaded correctly | ✅ Complete |
+| Cell 4 | Column Names | df.columns lists all 19 column names | ✅ Complete |
+| Cell 5 | Data Types | df.info() confirms data types and zero null values | ✅ Complete |
+| Cell 6 | Statistical Summary | df.describe() verifies figures match Phase 2 and Phase 3 findings | ✅ Complete |
+| Cell 7 | Date Conversion | pd.to_datetime() converts Order_Date from text to datetime64 | ✅ Complete |
+| Cell 8 | Build RFM Table | groupby and agg() calculate Recency, Frequency, Monetary per customer | ✅ Complete |
+| Cell 9 | Assign RFM Scores | pd.cut() converts raw RFM values to 1-2-3 score bands per dimension | ✅ Complete |
+| Cell 10 | Assign Segments | Custom function assigns Champion, Loyal, Promising, At Risk, Lost labels | ✅ Complete |
+| Cell 11 | Visualise Segments | Bar chart showing customer count per segment | 🔜 Upcoming |
+| Cell 12 | Segment Revenue Analysis | Revenue and average spend per segment | 🔜 Upcoming |
+| Cell 13 | Export Segmented Data | Exports full RFM table with segments to CSV | 🔜 Upcoming |
