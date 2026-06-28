@@ -100,4 +100,27 @@ validated before being committed to the repository.
 | Cell 10 | Assign Segments | Custom function assigns Champion, Loyal, Promising, At Risk, Lost labels | ✅ Complete |
 | Cell 11 | Visualise Segments | Bar chart showing customer count per segment | ✅ Complete |
 | Cell 12 | Segment Revenue Analysis | Revenue and average spend per segment | ✅ Complete |
-| Cell 13 | Export Segmented Data | Exports full RFM table with segments to CSV | 🔄 In Progress |
+| Cell 13 | Export Segmented Data | Exports full RFM table with segments to CSV — rfm_customer_segments.csv — 4,844 rows 10 columns | ✅ Complete |
+
+---
+
+## Phase 4 Deliverables
+
+| Deliverable | File | Description |
+|-------------|------|-------------|
+| RFM Segment Chart | `rfm_segment_chart.png` | Bar chart showing customer count and percentage per CRM segment |
+| Segmented Customer Export | `rfm_customer_segments.csv` | Full RFM table with scores, segment labels, and CRM priority for all 4,844 customers |
+
+---
+
+## Key Phase 4 Findings
+
+| Finding | Detail |
+|---------|--------|
+| Lost Customers | 2,972 customers — 61.35% of base — generate 53.46% of revenue |
+| Promising Customers | 1,543 customers — 31.85% of base — generate 31.05% of revenue |
+| At Risk High Value | 175 customers — 3.61% of base — generate 9.16% of revenue at avg order 279,303.37 |
+| Loyal Customers | 152 customers — 3.14% of base — generate 6.18% of revenue — highest margin 15.47% |
+| Champions | 2 customers — 0.04% of base — generate 0.15% of revenue |
+| Most urgent CRM action | Win-back campaign targeting 175 At Risk High Value customers immediately |
+| Biggest CRM opportunity | Nurture campaign targeting 1,543 Promising customers before they drift to Lost |
