@@ -1,6 +1,6 @@
 # Google Sheets — Working Notes
 
-This file is a dated, step-by-step record of every action taken inside the E-Commerce Sales Intelligence — Data Workbook. It is updated progressively as each phase of the project is completed.
+This file is a dated, step-by-step record of every action taken inside the E-Commerce Sales Intelligence - Data Workbook. It is updated progressively as each phase of the project is completed.
 
 ---
 
@@ -118,3 +118,5 @@ project is completed.
 | June 2026 | Phase 4 Step 7 | Segment Revenue Analysis Completed | Cursor Notebook Cell 12 | Merged original dataset with RFM segment labels using df.merge() on Customer_Name. Grouped by Segment using groupby and agg() to calculate revenue, profit, average order value, margin, and percentage contributions per segment. Sorted by revenue descending. | Revenue contribution per segment reveals commercial priority beyond customer counts alone — enabling budget-efficient CRM resource allocation. | At Risk High Value — 3.61% of customers — 9.16% revenue — avg order 279,303.37. Loyal Customers — 3.14% of customers — 6.18% revenue — highest margin 15.47%. Total revenue and profit verified matching all previous phases. |
 
 | June 2026 | Phase 4 Step 8 | RFM Segmented Customer Data Exported to CSV | Cursor Notebook Cell 13 | Created clean export copy of RFM table using rfm.copy(). Renamed columns to professional readable names. Added CRM_Priority column using custom assign_priority function. Sorted by priority then lifetime value. Exported as rfm_customer_segments.csv using to_csv(). Uploaded to GitHub. | Exporting the segmented customer list makes Phase 4 findings shareable, uploadable to CRM platforms, and referenceable in the case study. Priority column enables immediate CRM action without additional sorting. | rfm_customer_segments.csv exported with 4,844 rows and 10 columns. At Risk High Value customers at top of file as highest priority. File uploaded to GitHub under 04_python/notebooks/. |
+
+| June 2026 | Phase 5 Step 1 | Case Study Report Written and Published | GitHub — 06_case_study/case_study_report.md | Wrote complete seven-section case study report covering Executive Summary, Business Context, Data Overview, Key Findings across all four phases, five CRM Recommendations with specific targets and actions, Technical Summary, and Conclusion. Committed to GitHub. | Case study translates all technical findings into a business narrative readable by non-technical audiences including hiring managers, founders, and CRM leads. | Full case study published successfully. All findings from Phases 1 to 4 consolidated. Five prioritised CRM recommendations documented. Repository ready for final publication steps. |
