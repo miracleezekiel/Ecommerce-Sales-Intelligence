@@ -46,7 +46,7 @@ customers who are about to leave.
 
 This is not a product problem. The data shows no category 
 catastrophically underperforming. It is not a pricing problem 
-in isolation — though the discount strategy is actively 
+in isolation; though the discount strategy is actively 
 destroying margin. It is a retention problem. And retention 
 problems are CRM problems.
 
@@ -204,7 +204,7 @@ from only 4.46% of all transactions.
 ### Priority 1 — Immediate Win-Back: At Risk High Value Customers
 
 **Target:** 175 customers
-**Why urgent:** Average order value of 279,303.37 — nearly 
+**Why urgent:** Average order value of 279,303.37, nearly 
 three times the dataset average. These customers have already 
 demonstrated willingness to make high-value purchases. 
 Every additional month of silence reduces re-engagement 
@@ -241,7 +241,7 @@ triggered immediately after first purchase:
 **Target:** 152 customers
 **Why important:** These are the only customers who have 
 already demonstrated they will return. Their average margin 
-of 15.47% is the highest of any segment — they buy less on 
+of 15.47% is the highest of any segment; they buy less on 
 discount and more at full price. Losing even 20 of these 
 152 customers would be a disproportionate profit loss.
 
@@ -262,7 +262,7 @@ zero-discount transactions.
 
 **Recommended action:** Implement category-specific discount 
 caps. Reserve discounts exclusively for win-back campaigns 
-targeting At Risk and Lost segments — not as a general 
+targeting At Risk and Lost segments, not as a general 
 revenue driver. Test a zero-discount period for Electronics 
 and Clothing — the two highest-margin categories — and 
 measure impact on volume and profit simultaneously.
