@@ -21,7 +21,7 @@ Each time a new step is completed inside the Google Sheets workbook, an entry is
 # Google Sheets — Working Notes
 
 This file mirrors the Sheet Notes tab inside the 
-E-Commerce Sales Intelligence — Data Workbook. 
+E-Commerce Sales Intelligence - Data Workbook. 
 Every entry here corresponds to a row in that tab 
 and is updated progressively as each phase of the 
 project is completed.
