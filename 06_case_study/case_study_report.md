@@ -212,7 +212,7 @@ probability significantly.
 
 **Recommended action:** Personalised outreach within the next 
 30 days. Reference their previous purchase category. Offer 
-a meaningful loyalty incentive — not a blanket discount but 
+a meaningful loyalty incentive, not a blanket discount but 
 a category-specific reward. Flag these 175 customers in your 
 CRM immediately for manual review by the highest-performing 
 sales or CRM team member available.
@@ -264,7 +264,7 @@ zero-discount transactions.
 caps. Reserve discounts exclusively for win-back campaigns 
 targeting At Risk and Lost segments, not as a general 
 revenue driver. Test a zero-discount period for Electronics 
-and Clothing — the two highest-margin categories — and 
+and Clothing, the two highest-margin categories, and 
 measure impact on volume and profit simultaneously.
 
 ---
@@ -275,13 +275,13 @@ measure impact on volume and profit simultaneously.
 **Why important:** North generates the most revenue but has 
 the worst retention rate. It is the most acquisition-dependent 
 region in the business. A targeted retention pilot in North 
-— even recovering 2% of churned customers — would represent 
+— even recovering 2% of churned customers, would represent 
 meaningful incremental revenue given the region's base size.
 
 **Recommended action:** Run the Promising customer nurture 
 sequence as a North-specific pilot first. Measure 
 re-engagement rate at 30, 60, and 90 days. Use South as 
-the control region — its 0.75% retention rate makes it 
+the control region, its 0.75% retention rate makes it 
 the best existing benchmark for comparison.
 
 ---
@@ -318,7 +318,7 @@ the best existing benchmark for comparison.
 ## 7. Conclusion
 
 This analysis began with 5,000 transactions and a question 
-nobody had asked directly — is this business actually 
+nobody had asked directly, is this business actually 
 retaining its customers?
 
 The answer is no. Emphatically, consistently, and 
@@ -327,7 +327,7 @@ business-wide, no.
 96.82% of customers left after one purchase. The revenue 
 numbers looked healthy because new customers kept arriving 
 to fill the gap. But a business that cannot retain customers 
-is not growing — it is running in place while burning 
+is not growing; it is running in place while burning 
 acquisition budget to stay there.
 
 The data also reveals the opportunity on the other side of 
