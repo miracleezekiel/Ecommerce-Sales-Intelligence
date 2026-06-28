@@ -14,8 +14,8 @@ This case study presents a full end-to-end analysis of an
 e-commerce business generating 533,666,024.35 in total revenue 
 across 5,000 transactions and 4,844 unique customers over two 
 years. The analysis reveals a business facing a structural 
-customer retention crisis — 96.82% of all customers placed 
-exactly one order and never returned — while simultaneously 
+customer retention crisis,  96.82% of all customers placed 
+exactly one order and never returned;  while simultaneously 
 operating a discount strategy that systematically reduces 
 profit at every discount tier. Using Google Sheets, SQL, and 
 Python RFM analysis, every customer has been scored, 
