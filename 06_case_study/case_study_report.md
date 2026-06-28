@@ -274,8 +274,7 @@ measure impact on volume and profit simultaneously.
 **Target:** North region — 1,283 customers — 99.61% churn rate
 **Why important:** North generates the most revenue but has 
 the worst retention rate. It is the most acquisition-dependent 
-region in the business. A targeted retention pilot in North 
-— even recovering 2% of churned customers, would represent 
+region in the business. A targeted retention pilot in North, even recovering 2% of churned customers, would represent 
 meaningful incremental revenue given the region's base size.
 
 **Recommended action:** Run the Promising customer nurture 
