@@ -105,7 +105,7 @@ and a final published case study with CRM recommendations.
 
 ## Additional Validation
 
-Following feedback from the data community, a customer purchase distribution analysis was added to provide more context around the observed repeat purchase rate.
+Following constructive feedback on LinkedIn, a customer purchase distribution analysis was added to provide more context around the observed repeat purchase rate.
 
 ![Customer Purchase Distribution](05_screenshots/python/p4_python_customer_purchase_distribution.png)
 
@@ -186,7 +186,7 @@ is available in the `06_case_study/` folder in both Markdown and PDF format.
 
 ### Version 1.1
 
-Following feedback from the data community, this project now includes:
+Following constructive feedback on LinkedIn, this project now includes:
 
 - Customer purchase distribution analysis.
 - Additional discussion on the limitations of interpreting repeat purchase behaviour from a synthetic dataset.
