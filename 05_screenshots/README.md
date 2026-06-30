@@ -33,7 +33,7 @@ are taken after each query is written and executed, capturing
 both the SQL code and the result output panel below it.
 
 ### python/
-Contains screenshots from VS Code showing the Jupyter notebook 
+Contains screenshots from cursor showing the notebook 
 cells and their outputs at each stage of the Python analysis.
 
 ---
