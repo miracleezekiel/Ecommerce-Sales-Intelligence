@@ -1,77 +1,98 @@
 # 05 — Screenshots
 
-This folder contains screenshots taken at each phase of the 
-E-Commerce Sales Intelligence project. Screenshots serve as 
-visual proof of the analytical work completed inside each tool 
-and are used to support the case study and project documentation.
+This folder contains all screenshots taken throughout the project.
+Every screenshot documents a specific completed step and serves as
+visual evidence of the analytical work performed.
 
 ---
 
-## Files in This Folder
+## Folder Structure
 
-| File | Description |
-|------|-------------|
-| `README.md` | Overview of the screenshots folder and its subfolder structure |
-| `google_sheets/` | Screenshots captured from the Google Sheets workbook |
-| `mysql/` | Screenshots captured from MySQL Workbench 8.0 CE |
-| `python/` | Screenshots captured from VS Code and Jupyter notebook outputs |
-
----
-
-## Subfolder Structure
-
-### google_sheets/
-Contains screenshots from the E-Commerce Sales Intelligence 
-Data Workbook. Screenshots are taken at the completion of 
-each meaningful step inside the workbook — including the Raw 
-Data tab, the Cleaned Data tab, the Data Issues Log, 
-Validation formulas, Pivot Tables, and Visualizations.
-
-### mysql/
-Contains screenshots from MySQL Workbench 8.0 CE. Screenshots 
-are taken after each query is written and executed, capturing 
-both the SQL code and the result output panel below it.
-
-### python/
-Contains screenshots from cursor showing the notebook 
-cells and their outputs at each stage of the Python analysis.
+| Subfolder | Contents |
+|-----------|---------|
+| `google_sheets/` | Screenshots from Phase 1 and Phase 2 Google Sheets work |
+| `mysql/` | Screenshots from Phase 3 MySQL Workbench SQL analysis |
+| `python/` | Screenshots from Phase 4 Python analysis in Cursor |
 
 ---
 
 ## Screenshot Naming Convention
 
-All screenshots follow this naming format to keep the folder 
-organised and easy to navigate:
-
-Phase Tool Description png
-
+All screenshots follow this naming pattern:
 
 Examples:
+- `p1_sheets_validation_check1.png` — Phase 1, Google Sheets, validation check 1
+- `p3_mysql_kpi001_overall_performance.png` — Phase 3, MySQL, KPI-001 query result
+- `p4_python_rfm_chart.png` — Phase 4, Python, RFM segment chart
 
-| Screenshot Name | What It Shows |
-|-----------------|---------------|
-| `p1_sheets_raw_data_import.png` | Phase 1 — Raw data imported into Google Sheets |
-| `p1_sheets_data_issues_log.png` | Phase 1 — Data Issues Log tab completed |
-| `p3_mysql_kpi_query_revenue.png` | Phase 3 — KPI query showing total revenue result |
-| `p1_python_missing_value_check.png` | Phase 1 — Missing value check output in notebook |
+---
+
+## Google Sheets Screenshots
+
+| File | What It Shows |
+|------|--------------|
+| p1_sheets_raw_data.png | Raw dataset before cleaning |
+| p1_sheets_cleaned_data.png | Cleaned dataset with 19 columns |
+| p1_sheets_validation_check1.png | Missing values check — zero result |
+| p1_sheets_validation_check2.png | Duplicate check — zero result |
+| p1_sheets_validation_check5.png | IQR outlier detection — 223 flagged |
+| p1_sheets_outlier_flag_column.png | Outlier_Flag column with conditional formatting |
+| p2_sheets_kpi_section.png | Data Exploration tab showing headline KPIs |
+| p2_sheets_pivot_tables.png | Pivot tables tab |
+| p2_sheets_charts.png | Visualizations tab |
+
+---
+
+## MySQL Screenshots
+
+| File | What It Shows |
+|------|--------------|
+| p3_mysql_kpi001_overall_performance.png | KPI-001 — overall revenue and profit |
+| p3_mysql_kpi004_discount_impact.png | KPI-004 — discount trap confirmed |
+| p3_mysql_kpi009_customer_segments.png | KPI-009 — 96.82% one-time customer rate |
+| p3_mysql_kpi010_regional_retention.png | KPI-010 — repeat rate by region |
+| p3_mysql_kpi011_customer_lifetime_value.png | KPI-011 — top 20 customers |
+| p3_mysql_kpi015_cross_analysis_top.png | KPI-015 — top ranked combinations |
+| p3_mysql_kpi015_cross_analysis_bottom.png | KPI-015 — bottom ranked combinations |
+| p3_mysql_seg002_frequency_segments.png | SEG-002 — customer frequency segments |
+| p3_mysql_churn003_category_churn.png | CHURN-003 — category churn risk |
+
+---
+
+## Python Screenshots
+
+| File | What It Shows |
+|------|--------------|
+| p4_python_cursor_setup.png | Cursor installed with project folder and notebook open |
+| p4_python_notebook_loaded.png | Cells 1 to 3 — dataset loaded and previewed |
+| p4_python_data_inspection.png | Cells 4 to 6 — columns, types, and statistical summary |
+| p4_python_date_conversion.png | Cell 7 — Order_Date converted to datetime64 |
+| p4_python_rfm_scores.png | Cell 9 — RFM scores assigned to customers |
+| p4_python_rfm_segments.png | Cell 10 — segment distribution results |
+| p4_python_rfm_chart.png | Cell 11 — RFM segment bar chart in notebook |
+| p4_python_segment_revenue.png | Cell 12 — revenue analysis per segment |
+| p4_python_rfm_export.png | Cell 13 — export confirmation |
+
+---
+
+## Phase 5 Screenshots
+
+| File | What It Shows |
+|------|--------------|
+| p5_github_case_study_markdown.png | Case study rendered on GitHub |
+| p5_github_case_study_pdf.png | Case study folder showing both formats |
+| p5_github_repo_public.png | Repository showing public status |
+| p5_linkedin_certificate_updated.png | LinkedIn certificate with GitHub link |
+| p5_github_sheets_workbook_uploaded.png | Google Sheets folder with Excel workbook |
 
 ---
 
 ## Phase Coverage
 
-| Phase | Screenshots Expected |
-|-------|---------------------|
-| Phase 1 | Google Sheets cleaning steps, Python notebook outputs |
-| Phase 2 | Google Sheets pivot tables and charts, Python EDA outputs |
-| Phase 3 | MySQL Workbench query results |
-| Phase 4 | Python CRM and segmentation outputs |
-
----
-
-## Important Note
-
-Screenshots are added to their respective subfolders 
-progressively as each phase of the project is completed. 
-Each screenshot is taken immediately after the corresponding 
-step is finished to ensure the visual record accurately 
-reflects the work done at that point in the project.
+| Phase | Screenshots Taken |
+|-------|-----------------|
+| Phase 1 | Google Sheets cleaning and validation steps |
+| Phase 2 | Google Sheets EDA sections, pivot tables, and charts |
+| Phase 3 | MySQL Workbench — all 22 query results |
+| Phase 4 | Python notebook — all 13 cells and deliverables |
+| Phase 5 | GitHub publication and LinkedIn profile updates |
