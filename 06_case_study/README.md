@@ -22,21 +22,23 @@ The case study covers seven sections:
 
 | Section | Content |
 |---------|---------|
-| 1. Executive Summary | The entire project in plain English — problem, approach, findings, recommendation |
-| 2. Business Context | What kind of business this is and what problem the data revealed |
-| 3. Data Overview | Dataset specifications, validation checks, and documented issues |
-| 4. Key Findings | All major discoveries from Phases 1 through 4 |
+| 1. Executive Summary | The entire project in plain English — problem, approach, findings, recommendations |
+| 2. Business Context | What kind of business this is and what the available customer transaction data suggests |
+| 3. Data Overview | Dataset specifications, validation checks, documented issues, and analytical limitations |
+| 4. Key Findings | All major discoveries from Phases 1 through 4, including customer purchase distribution validation |
 | 5. CRM Recommendations | Five prioritised recommendations with specific targets and actions |
 | 6. Technical Summary | Tools, phases, SQL files, and Python notebook summary |
-| 7. Conclusion | The business impact of acting on the data |
+| 7. Conclusion | The business impact of acting on the data and considerations for future analysis |
 
 ---
 
 ## The Central Finding
 
-> 96.82% of all customers placed exactly one order and never returned.
-> The business was generating revenue that looked healthy on the surface
-> while quietly losing almost every customer it acquired.
+> The available customer transaction data shows that 96.82% of customers
+> placed exactly one order, resulting in a very low repeat purchase rate.
+> This finding became the foundation for the CRM analysis while also
+> highlighting the importance of validating dataset context before drawing
+> broader business conclusions.
 
 ---
 
@@ -52,15 +54,21 @@ The case study covers seven sections:
 
 ---
 
+## Project Update
+
+Following constructive feedback on LinkedIn, the case study was expanded to include a customer purchase distribution analysis and additional discussion around interpreting repeat purchase behaviour in a synthetic dataset. These additions provide more context for the CRM recommendations while reinforcing the importance of validating data before drawing business conclusions.
+
+---
+
 ## How to Read This Case Study
 
-If you are a **technical reader** — start with Section 6 to understand
+If you are a **technical reader**, start with Section 6 to understand
 the tools and methodology, then read Sections 3 and 4 for the detailed
 findings.
 
-If you are a **business reader** — start with Section 1 for the
+If you are a **business reader**, start with Section 1 for the
 executive summary, jump to Section 4 for the key findings, and
-read Section 5 for what to do about them.
+read Section 5 for the recommended actions.
 
 ---
 
@@ -68,11 +76,12 @@ read Section 5 for what to do about them.
 
 | Phase | Activity |
 |-------|----------|
-| Phase 5 | Case study written and published — project complete |
+| Phase 5 | Case study written, peer reviewed, updated, and published — project complete |
 
 ---
 
 ## Full Repository
 
 All datasets, SQL queries, Python notebooks, and documentation:
+
 github.com/miracleezekiel/ecommerce-sales-intelligence
