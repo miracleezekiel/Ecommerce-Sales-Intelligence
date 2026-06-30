@@ -1,8 +1,8 @@
 # 04 — Python
 
-This folder contains all Python work completed as part of the 
-E-Commerce Sales Intelligence project. It is organised into 
-two subfolders that separate the testing notebook from the 
+This folder contains all Python work completed as part of the
+E-Commerce Sales Intelligence project. It is organised into
+two subfolders that separate the testing notebook from the
 final script outputs.
 
 ---
@@ -11,7 +11,7 @@ final script outputs.
 
 | Subfolder | Contents |
 |-----------|---------|
-| `notebooks/` | Jupyter notebook used for step-by-step analysis and testing |
+| `notebooks/` | Jupyter notebook used for step-by-step analysis, RFM segmentation, and customer purchase distribution validation |
 | `scripts/` | Final Python scripts containing clean production-ready code |
 
 ---
@@ -20,7 +20,7 @@ final script outputs.
 
 | File | Description |
 |------|-------------|
-| `notebooks/data_cleaning_notebook.ipynb` | Main Jupyter notebook containing all Phase 4 Python analysis |
+| `notebooks/data_cleaning_notebook.ipynb` | Main Jupyter notebook containing all Phase 4 Python analysis, RFM segmentation, and customer purchase distribution analysis |
 | `scripts/data_cleaning.py` | Final clean Python script produced after notebook testing |
 
 ---
@@ -36,26 +36,28 @@ final script outputs.
 | matplotlib | Chart and visualisation creation |
 | seaborn | Statistical visualisation and professional chart styling |
 | openpyxl | Excel file reading and writing support |
+
 ---
 
 ## Python Concepts Used
 
 | Concept | Plain English Meaning | Where Used |
 |---------|----------------------|-----------|
-| `import` | Bring in a toolbox of ready-made functions | Every notebook cell — imports pandas matplotlib seaborn |
+| `import` | Bring in a toolbox of ready-made functions | Every notebook cell — imports pandas, matplotlib, seaborn |
 | `pd.read_csv()` | Load a CSV file into a pandas DataFrame table | Cell 2 — loading the cleaned dataset |
 | `df.head()` | Show the first 5 rows of the dataset | Cell 3 — initial data preview |
 | `df.columns` | List all column names in the dataset | Cell 4 — confirming all 19 columns loaded correctly |
 | `df.info()` | Show data types and null value counts per column | Cell 5 — confirming data types and zero nulls |
 | `df.describe()` | Show statistical summary of all numerical columns | Cell 6 — verifying figures match Phase 2 and Phase 3 |
-| `df['column']` | Select a specific column from the DataFrame | RFM analysis — selecting Customer_Name Sales etc |
-| `groupby()` | Group rows by a column and calculate aggregations | RFM analysis — grouping by Customer_Name |
-| `agg()` | Apply multiple calculations to grouped data at once | RFM analysis — calculating recency frequency monetary |
+| `df['column']` | Select a specific column from the DataFrame | RFM analysis — selecting Customer_Name, Sales, etc. |
+| `groupby()` | Group rows by a column and calculate aggregations | RFM analysis and customer purchase distribution |
+| `size()` | Count the number of records in each group | Customer purchase distribution analysis |
+| `agg()` | Apply multiple calculations to grouped data at once | RFM analysis — calculating Recency, Frequency, Monetary |
 | `pd.to_datetime()` | Convert text dates to proper Python date format | RFM analysis — converting Order_Date column |
 | `apply()` | Apply a function to every row or column | RFM scoring — assigning scores per customer |
 | `pd.cut()` | Divide numerical values into labelled tiers | RFM segmentation — creating score bands |
 | `merge()` | Join two DataFrames together on a shared column | RFM analysis — combining scores with customer data |
-| `value_counts()` | Count how many times each unique value appears | Segment distribution analysis |
+| `value_counts()` | Count how many times each unique value appears | Segment distribution analysis and purchase frequency analysis |
 | `plt.figure()` | Create a new chart canvas | Visualisation cells |
 | `sns.barplot()` | Draw a bar chart using seaborn | RFM segment visualisations |
 | `df.to_csv()` | Export DataFrame to a CSV file | Exporting RFM segmented customer data |
@@ -66,7 +68,7 @@ final script outputs.
 
 | Phase | Activity |
 |-------|----------|
-| Phase 4 | CRM and Customer Retention Analysis — RFM scoring and segmentation |
+| Phase 4 | CRM and Customer Retention Analysis — RFM scoring, segmentation, and customer purchase distribution validation |
 
 ---
 
@@ -74,12 +76,12 @@ final script outputs.
 
 All Python work follows this two-step process:
 
-1. Code is written and tested inside the Jupyter notebook 
-   in the `notebooks/` subfolder one cell at a time
-2. Once confirmed working the final version is saved 
-   as a clean script in the `scripts/` subfolder
+1. Code is written and tested inside the Jupyter notebook
+   in the `notebooks/` subfolder one cell at a time.
+2. Once confirmed working, the final version is saved
+   as a clean script in the `scripts/` subfolder.
 
-This ensures every script in this folder has been fully 
+This ensures every script in this folder has been fully
 validated before being committed to the repository.
 
 ---
@@ -90,17 +92,18 @@ validated before being committed to the repository.
 |------|-------|-------------|--------|
 | Cell 1 | Import Libraries | Imports pandas, matplotlib, and seaborn toolboxes | ✅ Complete |
 | Cell 2 | Load Dataset | Loads ecommerce_sales_cleaned.csv — confirms 5,000 rows and 19 columns | ✅ Complete |
-| Cell 3 | Preview Data | df.head() shows first 5 rows to confirm data loaded correctly | ✅ Complete |
+| Cell 3 | Preview Data | df.head() shows the first 5 rows to confirm data loaded correctly | ✅ Complete |
 | Cell 4 | Column Names | df.columns lists all 19 column names | ✅ Complete |
 | Cell 5 | Data Types | df.info() confirms data types and zero null values | ✅ Complete |
 | Cell 6 | Statistical Summary | df.describe() verifies figures match Phase 2 and Phase 3 findings | ✅ Complete |
 | Cell 7 | Date Conversion | pd.to_datetime() converts Order_Date from text to datetime64 | ✅ Complete |
-| Cell 8 | Build RFM Table | groupby and agg() calculate Recency, Frequency, Monetary per customer | ✅ Complete |
-| Cell 9 | Assign RFM Scores | pd.cut() converts raw RFM values to 1-2-3 score bands per dimension | ✅ Complete |
-| Cell 10 | Assign Segments | Custom function assigns Champion, Loyal, Promising, At Risk, Lost labels | ✅ Complete |
+| Cell 8 | Build RFM Table | groupby() and agg() calculate Recency, Frequency, and Monetary per customer | ✅ Complete |
+| Cell 9 | Assign RFM Scores | pd.cut() converts raw RFM values into 1–2–3 score bands per dimension | ✅ Complete |
+| Cell 10 | Assign Segments | Custom function assigns Champion, Loyal, Promising, At Risk, and Lost labels | ✅ Complete |
 | Cell 11 | Visualise Segments | Bar chart showing customer count per segment | ✅ Complete |
 | Cell 12 | Segment Revenue Analysis | Revenue and average spend per segment | ✅ Complete |
-| Cell 13 | Export Segmented Data | Exports full RFM table with segments to CSV — rfm_customer_segments.csv — 4,844 rows 10 columns | ✅ Complete |
+| Cell 13 | Export Segmented Data | Exports full RFM table with segments to CSV — rfm_customer_segments.csv — 4,844 rows, 10 columns | ✅ Complete |
+| Cell 14 | Customer Purchase Distribution | Analyses purchase frequency per customer and visualises the distribution to provide additional context around repeat purchasing | ✅ Complete |
 
 ---
 
@@ -109,6 +112,7 @@ validated before being committed to the repository.
 | Deliverable | File | Description |
 |-------------|------|-------------|
 | RFM Segment Chart | `rfm_segment_chart.png` | Bar chart showing customer count and percentage per CRM segment |
+| Customer Purchase Distribution | `p4_python_customer_purchase_distribution.png` | Bar chart showing the number of customers by purchase frequency to provide additional context around repeat purchasing |
 | Segmented Customer Export | `rfm_customer_segments.csv` | Full RFM table with scores, segment labels, and CRM priority for all 4,844 customers |
 
 ---
@@ -119,8 +123,21 @@ validated before being committed to the repository.
 |---------|--------|
 | Lost Customers | 2,972 customers — 61.35% of base — generate 53.46% of revenue |
 | Promising Customers | 1,543 customers — 31.85% of base — generate 31.05% of revenue |
-| At Risk High Value | 175 customers — 3.61% of base — generate 9.16% of revenue at avg order 279,303.37 |
-| Loyal Customers | 152 customers — 3.14% of base — generate 6.18% of revenue — highest margin 15.47% |
+| At Risk High Value | 175 customers — 3.61% of base — generate 9.16% of revenue at avg order value of 279,303.37 |
+| Loyal Customers | 152 customers — 3.14% of base — generate 6.18% of revenue — highest margin of 15.47% |
 | Champions | 2 customers — 0.04% of base — generate 0.15% of revenue |
+| Customer purchase distribution | 4,690 customers placed one order, 152 placed two orders, and 2 placed three orders |
 | Most urgent CRM action | Win-back campaign targeting 175 At Risk High Value customers immediately |
 | Biggest CRM opportunity | Nurture campaign targeting 1,543 Promising customers before they drift to Lost |
+
+---
+
+## Additional Validation
+
+Following feedback from LinkedIn, a customer purchase distribution analysis was added to provide additional context around the observed repeat purchase rate.
+
+The analysis shows that 4,690 of the 4,844 customers made a single purchase, while only 154 customers placed more than one order.
+
+This finding supports the repeat purchase pattern observed throughout the project. However, because this project uses a synthetic dataset, the results should be interpreted with appropriate caution. In a real business environment, validating dataset completeness, understanding the business model, and considering the expected product purchase cycle would be important before drawing firm conclusions about customer retention.
+
+The additional analysis strengthens the interpretation of the CRM findings by providing greater transparency around the underlying customer purchase behaviour.
