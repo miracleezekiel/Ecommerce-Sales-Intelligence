@@ -104,3 +104,81 @@ and a final published case study with CRM recommendations.
 ---
 
 ## Repository Structure
+ecommerce-sales-intelligence/
+├── 01_dataset/
+│   ├── README.md
+│   ├── ecommerce_sales_raw.csv
+│   └── ecommerce_sales_cleaned.csv
+├── 02_google_sheets/
+│   ├── README.md
+│   ├── google_sheets_notes.md
+│   └── ecommerce_sales_data_workbook.xlsx
+├── 03_sql_mysql/
+│   ├── README.md
+│   ├── 01_schema_setup.sql
+│   ├── 02_data_import_notes.md
+│   │   ├── 04_segmentation_queries.sql
+│   └── 05_churn_analysis.sql
+├── 04_python/
+│   ├── README.md
+│   ├── notebooks/
+│   │   ├── data_cleaning_notebook.ipynb
+│   │   └── rfm_customer_segments.csv
+│   └── scripts/
+│       └── data_cleaning.py
+├── 05_screenshots/
+│   ├── README.md
+│   ├── google_sheets/
+│   ├── mysql/
+│   └── python/
+├── 06_case_study/
+│   ├── README.md
+│   ├── case_study_report.md
+│   └── ECommerce_Sales_Intelligence_Case_Study.pdf
+└── README.md
+
+---
+
+## Tools Used
+
+| Tool | Purpose | Phase |
+|------|---------|-------|
+| Google Sheets | Data cleaning, EDA, pivot tables, charts | Phase 1 and 2 |
+| MySQL Workbench 8.0 CE | SQL database creation and query execution | Phase 3 |
+| Python in Cursor | RFM customer segmentation and visualisation | Phase 4 |
+| GitHub | Version control, documentation, and publication | All phases |
+
+---
+
+## CRM Recommendations Summary
+
+| Priority | Target | Action |
+|----------|--------|--------|
+| 1 — Urgent | 175 At Risk High Value customers | Personalised win-back outreach within 30 days |
+| 2 — Protect | 2 Champion customers | VIP treatment and dedicated account contact |
+| 3 — Reward | 152 Loyal Customers | Formal loyalty programme with points and early access |
+| 4 — Nurture | 1,543 Promising customers | Automated 3-step email sequence post-purchase |
+| 5 — Re-engage | 2,972 Lost Customers | Final re-engagement attempt before accepting churn |
+
+---
+
+## Case Study
+
+The full written case study covering all findings and recommendations
+is available in the `06_case_study/` folder in both Markdown and PDF format.
+
+---
+
+## Analyst
+
+**Miracle Ezekiel**
+Virtual Assistant transitioning into Data Analytics with a
+focus on CRM intelligence, revenue operations, and AI-supported
+business automation.
+
+Background in executive assistance, customer support, and
+operations management — bringing direct operational context
+to every dataset analysed.
+
+LinkedIn: [linkedin.com/in/miracle-ezekiel](https://linkedin.com/in/miracle-ezekiel)
+
