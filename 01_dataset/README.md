@@ -1,80 +1,100 @@
 # 01 — Dataset
 
-This folder contains the original raw dataset used in the E-Commerce Sales Intelligence project. No modifications, cleaning, or transformations have been applied to this file. It represents the data exactly as it was sourced.
+This folder contains the raw and cleaned versions of the
+e-commerce dataset used throughout the project.
 
 ---
 
-## File in This Folder
+## Files
 
 | File | Description |
 |------|-------------|
-| `ecommerce_sales_raw.csv` | Original dataset containing 5,000 rows and 14 columns. Covers e-commerce transactions recorded between 2023 and 2025. |
+| `ecommerce_sales_raw.csv` | Original unmodified dataset as received before any cleaning |
+| `ecommerce_sales_cleaned.csv` | Fully cleaned and validated dataset with 19 columns ready for analysis |
 
 ---
 
-## Dataset Overview
+## Dataset Specifications
 
-| Detail | Information |
-|--------|-------------|
-| Total Records | 5,000 rows |
-| Total Columns | 14 columns |
+| Detail | Value |
+|--------|-------|
+| Total Rows | 5,000 |
+| Original Columns | 14 |
+| Columns After Cleaning | 19 |
 | Date Range | October 2023 to October 2025 |
-| Data Type | Synthetic e-commerce sales data |
-| License | CC0 Public Domain |
+| Unique Customers | 4,844 |
+| Regions | 4 — North, East, West, South |
+| Cities | 20 — 5 per region |
+| Categories | 10 |
+| Payment Modes | 5 |
+| Discount Levels | 5 — 0%, 5%, 10%, 15%, 20% |
 
 ---
 
-## Column Descriptions
+## Original Columns (14)
 
 | Column | Data Type | Description |
 |--------|-----------|-------------|
-| Order ID | Integer | Unique identifier for each transaction. Ranges from 10001 to 15000. |
-| Order Date | Date | The date the order was placed. Format: YYYY-MM-DD. |
-| Customer Name | Text | Full name of the customer who placed the order. |
-| Region | Text | Geographic sales region. Values: North, South, East, West. |
-| City | Text | City where the order was placed. 5 cities per region, 20 cities total. |
-| Category | Text | Top-level product category. 10 unique categories. |
-| Sub-Category | Text | Product sub-category within each category. 50 unique sub-categories. |
-| Product Name | Text | Name of the individual product ordered. |
-| Quantity | Integer | Number of units ordered. Ranges from 1 to 5. |
-| Unit Price | Integer | Price of a single unit before discount. |
-| Discount | Integer | Discount percentage applied to the order. Values: 0, 5, 10, 15, or 20. |
-| Sales | Decimal | Final sales amount after discount is applied. Calculated as Quantity × Unit Price × (1 − Discount%). |
-| Profit | Decimal | Profit generated from the transaction. |
-| Payment Mode | Text | Method of payment used. Values: Debit Card, Credit Card, UPI, Net Banking, COD. |
+| Order_ID | Integer | Unique identifier for each transaction |
+| Order_Date | Date | Date the order was placed |
+| Customer_Name | Text | Name of the customer |
+| Region | Text | Geographic region — North, East, West, South |
+| City | Text | Specific city within the region |
+| Category | Text | Product category |
+| Sub_Category | Text | Product sub-category |
+| Product_Name | Text | Name of the product |
+| Quantity | Integer | Number of units ordered |
+| Unit_Price | Decimal | Price per unit |
+| Discount | Decimal | Discount percentage applied |
+| Sales | Decimal | Total revenue for the order |
+| Profit | Decimal | Total profit for the order |
+| Payment_Mode | Text | Payment method used |
 
 ---
 
-## Important Note
+## Calculated Columns Added During Phase 1 (5)
 
-This file is preserved in its original state throughout the entire project. All data cleaning, validation, and transformation work is documented and conducted separately inside the Google Sheets workbook and Python scripts. Reference the `02_google_sheets` and `04_python` folders for all cleaning documentation.
+| Column | Formula Type | Description |
+|--------|-------------|-------------|
+| Outlier_Flag | IF with IQR threshold | Flags 223 transactions with profit above 48,831.53 |
+| Profit_Margin_Pct | Profit divided by Sales multiplied by 100 | Profit margin as a percentage |
+| Year | YEAR function on Order_Date | Year of the transaction |
+| Month | MONTH function on Order_Date | Month number of the transaction |
+| Month_Name | TEXT function on Order_Date | Full month name — January, February etc |
 
+---
 
+## Data Quality Summary
 
-## Cleaned Dataset
+| Check | Finding |
+|-------|---------|
+| Missing values | Zero across all 14 original columns |
+| Duplicate records | Zero — all 5,000 Order IDs are unique |
+| Sales formula accuracy | 100% mathematically verified |
+| Profit outliers | 223 transactions flagged above IQR upper bound |
+| 2023 coverage | Partial year — October to December only |
 
-| File | Description |
-|------|-------------|
-| `ecommerce_sales_cleaned.csv` | Cleaned dataset produced at the conclusion 
-of Phase 1. Contains all original 14 columns plus 5 new calculated columns — 
-Outlier_Flag, Profit_Margin_Pct, Year, Month, and Month_Name. 
-Column headers have been standardised for MySQL compatibility. 
-Total columns: 19. Total rows: 5,000. |
+---
 
-## Column Name Changes for MySQL Compatibility
+## How the Cleaned CSV Was Prepared
 
-The following column names were standardised from the raw dataset 
-to ensure clean importation into MySQL Workbench 8.0 CE:
+The cleaned CSV was exported from Google Sheets after completing
+all Phase 1 validation checks and adding the 5 calculated columns.
+Column headers were renamed to remove spaces and special characters
+to ensure full compatibility with MySQL Workbench import.
 
-| Original Name | Cleaned Name |
-|---------------|-------------|
-| Order ID | Order_ID |
-| Order Date | Order_Date |
-| Customer Name | Customer_Name |
-| Sub-Category | Sub_Category |
-| Product Name | Product_Name |
-| Unit Price | Unit_Price |
-| Payment Mode | Payment_Mode |
-| Outlier Flag | Outlier_Flag |
-| Profit Margin % | Profit_Margin_Pct |
-| Month Name | Month_Name |
+Example renames:
+- "Order ID" became "Order_ID"
+- "Profit Margin %" became "Profit_Margin_Pct"
+- "Order Date" became "Order_Date"
+
+---
+
+## Phase Coverage
+
+| Phase | Activity |
+|-------|----------|
+| Phase 1 | Data source for cleaning and quality assessment |
+| Phase 2 | Data source for exploratory analysis |
+| Phase 3 | Imported into MySQL Workbench as ecommerce_sales table |
+| Phase 4 | Loaded into Python via pd.read_csv() |
