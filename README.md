@@ -1,9 +1,9 @@
 # E-Commerce Sales Intelligence
 ### A Revenue Operations Case Study
 
-**Analyst:** Miracle Ezekiel
-**Tools:** Google Sheets | MySQL Workbench 8.0 CE | Python | GitHub
-**Dataset:** 5,000 transactions | October 2023 to October 2025
+**Analyst:** Miracle Ezekiel  
+**Tools:** Google Sheets | MySQL Workbench 8.0 CE | Python | GitHub  
+**Dataset:** 5,000 transactions | October 2023 to October 2025  
 **Repository Status:** ✅ Complete — All 5 Phases Published
 
 ---
@@ -16,10 +16,10 @@ customers spanning two years of sales history.
 
 The project answers one central business question:
 
-> Why is this business generating strong revenue while quietly
-> losing almost all of its customers?
+> Why does the available customer transaction data suggest
+> strong revenue alongside very limited repeat purchasing?
 
-The analysis moves through five structured phases — from raw data
+The analysis moves through five structured phases from raw data
 cleaning through SQL analysis, Python RFM customer segmentation,
 and a final published case study with CRM recommendations.
 
@@ -37,7 +37,7 @@ and a final published case study with CRM recommendations.
 | One-Time Customers | 4,690 (96.82%) |
 | Repeat Customers | 154 (3.18%) |
 | SQL Queries Written | 22 across 3 files |
-| Python Cells Written | 13 cells |
+| Python Cells Written | 14 cells |
 | RFM Segments Created | 5 |
 
 ---
@@ -103,7 +103,20 @@ and a final published case study with CRM recommendations.
 
 ---
 
+## Additional Validation
+
+Following feedback from the data community, a customer purchase distribution analysis was added to provide more context around the observed repeat purchase rate.
+
+![Customer Purchase Distribution](05_screenshots/python/p4_python_customer_purchase_distribution.png)
+
+The distribution shows that 4,690 of the 4,844 customers made a single purchase, while only 154 customers placed more than one order.
+
+Because this project uses a synthetic dataset, this result should be interpreted with appropriate caution. In a real business environment, validating dataset completeness, understanding the product category, and considering the expected purchase cycle would be important before drawing firm conclusions about customer retention.
+
+---
+
 ## Repository Structure
+
 ecommerce-sales-intelligence/
 ├── 01_dataset/
 │   ├── README.md
@@ -117,7 +130,7 @@ ecommerce-sales-intelligence/
 │   ├── README.md
 │   ├── 01_schema_setup.sql
 │   ├── 02_data_import_notes.md
-│   │   ├── 04_segmentation_queries.sql
+│   ├── 04_segmentation_queries.sql
 │   └── 05_churn_analysis.sql
 ├── 04_python/
 │   ├── README.md
@@ -169,16 +182,26 @@ is available in the `06_case_study/` folder in both Markdown and PDF format.
 
 ---
 
+## Project Updates
+
+### Version 1.1
+
+Following feedback from the data community, this project now includes:
+
+- Customer purchase distribution analysis.
+- Additional discussion on the limitations of interpreting repeat purchase behaviour from a synthetic dataset.
+- Validation notes to provide additional context before drawing customer retention conclusions.
+
+Community feedback helped strengthen both the analysis and the interpretation of the findings.
+
+---
+
 ## Analyst
 
 **Miracle Ezekiel**
-Virtual Assistant transitioning into Data Analytics with a
-focus on CRM intelligence, revenue operations, and AI-supported
-business automation.
 
-Background in executive assistance, customer support, and
-operations management — bringing direct operational context
-to every dataset analysed.
+Virtual Assistant transitioning into Data Analytics with a focus on CRM intelligence, revenue operations, and AI supported business automation.
+
+Background in executive assistance, customer support, and operations management, bringing direct operational context to every dataset analysed.
 
 LinkedIn: [linkedin.com/in/miracle-ezekiel](https://linkedin.com/in/miracle-ezekiel)
-
