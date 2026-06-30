@@ -29,13 +29,13 @@ final script outputs.
 
 | Tool | Purpose |
 |------|---------|
-| Cursor | AI-powered code editor with built-in Jupyter notebook support |
+| Cursor | AI-powered code editor used to write and run all Python code |
+| Jupyter Notebook | Interactive cell-by-cell coding environment built into Cursor |
 | Python 3.14 | Programming language |
 | pandas | Data loading, manipulation, and analysis |
 | matplotlib | Chart and visualisation creation |
 | seaborn | Statistical visualisation and professional chart styling |
 | openpyxl | Excel file reading and writing support |
-
 ---
 
 ## Python Concepts Used
